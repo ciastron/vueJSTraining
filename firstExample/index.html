@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- head definitions go here -->
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    </head>
+    <body>
+        <h1>
+            Hello Vue :-)
+        </h1>
+    <div id = "app">
+        <!-- part controlled by VUE -->
+        <div v-if="showBooks">
+            <p>{{ title }} - {{author}} - {{age}}</p>
+            <button v-on:click="age++">Increase age property</button>
+            <button v-on:click="age--">Decrease age property</button>
+            <div v-on:click="changeTitle('lord of rings')">
+                Change book title
+            </div>
+        </div>
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else="!showBooks">Show Books</span>
+        </button>
+        <div v-show=showBooks>
+            Currently showing books (is it the same of the previous example with v-if?
+            No, here, when hiding the content, we are simply hiding (with css) the content of this div.
+            Is it useful? Yes, since it works with css, it is lighter.
+        </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    </body>
+</html>
